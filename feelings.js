@@ -1,7 +1,7 @@
 const brain = require('brain.js')
 
 const trainingData = [
-    {input: 'I am super happy!', output: 'happy'},
+    { input: 'I am super happy!', output: 'happy'},
     { input: 'What a pill!', output: 'sarcastic' },
     { input: 'I am super unhappy!', output: 'sad' },
     { input: 'Are we there yet?', output: 'excited' }
@@ -14,4 +14,17 @@ net.train(trainingData, {
     errorThresh: 0.011,
 })
 
-console.log(net.run('Im happy'))
+
+getEmoji = feelings => {
+    switch (feelings){
+        case 'happy':
+            return '😃'
+        case 'sad':
+            return '😢'
+        default:
+            return '😶'
+    }
+}
+
+let feeling = net.run("I'm sleep")
+console.log(getEmoji(feeling))

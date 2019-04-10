@@ -15,4 +15,4 @@ model.train([
     { input: { lebron:  0, restOfTeam: 0  }, output: { win: 0, loss: 1 } }
 ]);
 
-console.log(model.run({ lebron: 68, restOfTeam: 24 }))
+console.log(model.run({ lebron: 46, restOfTeam: 40 }))
